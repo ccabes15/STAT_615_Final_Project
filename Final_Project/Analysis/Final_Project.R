@@ -3,14 +3,14 @@ library(ggplot2)
 library(GGally)
 library(broom)
 
-poker_data <- read_csv(file = "../Data/poker-hand-testing_data.csv", col_names = 
-                         c("Suit_1", "Rank_1", "Suit_2", "Rank_2", "Suit_3", "Rank_3",
-                           "Suit_4", "Rank_4", "Suit_5", "Rank_5", "Class"))
+abalone_data <- read_csv(file = "../Data/abalone_data.csv", col_names = 
+                         c("Sex", "Length", "Diameter", "Height", "Whole_Weight", "Shucked_Weight",
+                           "Viscera_Weight", "Shell_Weight", "Rings"))
 
-ggpairs(data = poker_data, na.rm = F)
+ggpairs(data = abalone_data)
 
-multmod_poker <- lm(Class ~ Suit_1 + Rank_1 + Suit_2 + Rank_2 + Suit_3 + Rank_3 +
-                      Suit_4 + Rank_4 + Suit_5 + Rank_5, data = poker_data)
+multmod_abalone <- lm(Rings ~ Sex + Length + Diameter + Height + Whole_Weight + Shucked_Weight + Viscera_Weight +
+                      Shell_Weight, data = abalone_data)
 
-mult_poker <- tidy(multmod_poker)
-mult_poker
+mult_abalone <- tidy(multmod_abalone)
+mult_abalone
