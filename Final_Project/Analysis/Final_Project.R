@@ -23,7 +23,3 @@ multmod_abalone <- lm(Rings ~ Length + Diameter + Height + Whole_Weight + Shucke
 
 mult_abalone <- tidy(multmod_abalone)
 mult_abalone
-
-sd(abalone_data$Height)
-mean(abalone_data$Height)
-
