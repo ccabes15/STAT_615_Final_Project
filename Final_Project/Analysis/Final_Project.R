@@ -8,12 +8,9 @@ abalone_data <- read_csv(file = "../Data/abalone_data.csv", col_names =
                          c("Sex", "Length", "Diameter", "Height", "Whole_Weight", "Shucked_Weight",
                            "Viscera_Weight", "Shell_Weight", "Rings"))
 
-
 #There are two outliers that are more than 3 SDs outside the mean within the Height Variable
 #By using Height < 0.3, we are able to remove these two outliers and get much better scatter-
 #plots
-
-
 
 abalone_data <- abalone_data %>% 
   filter(Height < 0.3) %>% 
